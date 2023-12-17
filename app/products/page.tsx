@@ -89,14 +89,14 @@ export default function Products() {
         <div
           className="flex items-center gap-4 cursor-pointer"
           onClick={() =>
-            checkedCategory === "/category/tops"
+            checkedCategory === "/category/womens-watches"
               ? setCheckedCategory("")
-              : setCheckedCategory("/category/tops")
+              : setCheckedCategory("/category/womens-watches")
           }
         >
           <button
             className={`border-2 border-black rounded-md ${
-              checkedCategory === "/category/tops" && "bg-black"
+              checkedCategory === "/category/womens-watches" && "bg-black"
             }`}
           >
             {
@@ -116,7 +116,7 @@ export default function Products() {
               </svg>
             }
           </button>
-          <h1>Popular</h1>
+          <h1>Women Watches</h1>
         </div>
       </div>
 

@@ -1,10 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type ProductCardProps = {
   source: string;
   title: string;
   desc: string;
   price: number;
+  href: string;
 };
 
 export default function ProductCard({
@@ -12,9 +14,10 @@ export default function ProductCard({
   title,
   desc,
   price,
+  href,
 }: ProductCardProps) {
   return (
-    <div className="flex flex-col gap-2">
+    <Link href={href} className="flex flex-col gap-2">
       <div>
         <Image
           src={source}
@@ -30,6 +33,6 @@ export default function ProductCard({
         <p className="truncate">{desc}</p>
         <p>${price}</p>
       </div>
-    </div>
+    </Link>
   );
 }

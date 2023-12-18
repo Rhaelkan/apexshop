@@ -10,7 +10,7 @@ export default function Hero() {
           Unleash <br className="sm:hidden" /> Innovation <br /> in Every Byte.
         </h1>
         <p className="mt-2 md:text-xl lg:text-2xl">
-          Explore a World of Cutting-Edge Tech
+          Explore World of Most Popular Products
         </p>
         <div className="mt-10">
           <Link

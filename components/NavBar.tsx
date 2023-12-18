@@ -10,7 +10,7 @@ export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white p-6 sm:py-10 top-0 z-20 w-full sticky">
+    <nav className="bg-white sm:bg-transparent sm:backdrop-blur-2xl p-6 sm:py-10 top-0 z-20 w-full sticky">
       <div className="section-container flex items-center justify-between">
         <Link href="/" className="text-3xl sm:text-3xl font-bold">
           ApexShop
@@ -22,6 +22,10 @@ export default function NavBar() {
                 href={link.href}
                 className={`${
                   pathName === link.href &&
+                  "font-semibold underline decoration-2"
+                } ${
+                  pathName.includes("/products") &&
+                  link.title === "Shop" &&
                   "font-semibold underline decoration-2"
                 }`}
               >

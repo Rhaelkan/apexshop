@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/FilterBar.jsx", "app/products/[productCategory]/layout.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/FilterBar.jsx", "app/products/[productCategory]/layout.jsx", "app/products/page.jsx", "components/ProductCard.jsx"],
   "exclude": ["node_modules"]
 }

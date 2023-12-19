@@ -18,6 +18,18 @@ export default function page({ params }) {
     );
   }, []);
 
+  // Function to add the current product to the cart
+  const addToCart = () => {
+    // Retrieve the existing cart from localStorage
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Update the cart with the current product
+    const updatedCart = [...existingCart, product];
+
+    // Save the updated cart to localStorage
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
+
   return (
     <>
       <div className="min-h-screen section-container px-6">
@@ -50,8 +62,11 @@ export default function page({ params }) {
             </div>
 
             <div className="mt-10">
-              <Link href="/">
-                <button className="bg-black px-6 py-3 text-white rounded-xl uppercase text-sm lg:text-base w-full">
+              <Link href="/cart">
+                <button
+                  onClick={addToCart}
+                  className="bg-black px-6 py-3 text-white rounded-xl uppercase text-sm lg:text-base w-full"
+                >
                   Add To Cart
                 </button>
               </Link>

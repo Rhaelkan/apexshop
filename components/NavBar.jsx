@@ -8,6 +8,7 @@ import { useState } from "react";
 export default function NavBar() {
   const pathName = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const initialCart = JSON.parse(localStorage.getItem("cart")) || [];
 
   return (
     <nav className="bg-white p-6 sm:py-10 top-0 z-20 w-full sticky">
@@ -29,7 +30,10 @@ export default function NavBar() {
                   "font-semibold underline decoration-2"
                 }`}
               >
-                {link.title}
+                {link.title}{" "}
+                {link.title === "Cart" &&
+                  initialCart.length > 1 &&
+                  `(${initialCart.length})`}
               </Link>
             </li>
           ))}
@@ -68,7 +72,10 @@ export default function NavBar() {
                     "font-semibold underline decoration-2"
                   }`}
                 >
-                  {link.title}
+                  {link.title}{" "}
+                  {link.title === "Cart" &&
+                    initialCart.length > 1 &&
+                    `(${initialCart.length})`}
                 </Link>
               </li>
             ))}

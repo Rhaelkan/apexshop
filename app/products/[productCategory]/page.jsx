@@ -24,7 +24,7 @@ export default function page({ params }) {
   return (
     <>
       <div className="section-container flex flex-col items-start px-6 2xl:px-0 2xl:flex-row 2xl:justify-between gap-12 mt-20">
-        <div className="flex flex-col gap-6 items-start border-b-2 mb-10 pb-6 border-gray-300 flex-1 min-w-[300px]">
+        <div className="flex flex-col gap-6 items-start border-b-2 mb-10 pb-6 border-gray-300 flex-1 min-w-[300px] 2xl:sticky 2xl:top-52">
           <h1 className="text-lg font-bold">Product Categories</h1>
 
           <div

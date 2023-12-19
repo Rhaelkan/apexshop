@@ -20,10 +20,11 @@ export default function page({ params }) {
 
   // Function to add the current product to the cart
   const addToCart = () => {
-    // Retrieve the existing cart from localStorage
     if (typeof window !== "undefined") {
-      // Perform localStorage action
+      // Check if window (browser) is defined before using localStorage
+      // Retrieve the existing cart from localStorage
       const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
       // Update the cart with the current product
       const updatedCart = [...existingCart, product];
 

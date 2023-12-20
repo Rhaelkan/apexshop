@@ -77,8 +77,8 @@ export default function NavBar() {
                 >
                   {link.title}{" "}
                   {link.title === "Cart" &&
-                    initialCart.length > 1 &&
-                    `(${initialCart.length})`}
+                    cart.length > 1 &&
+                    `(${cart.length})`}
                 </Link>
               </li>
             ))}

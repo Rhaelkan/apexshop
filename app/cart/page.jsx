@@ -5,12 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function page() {
-  const initialCart = JSON.parse(localStorage.getItem("cart")) || [];
-  const [cart, setCart] = useState(initialCart);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     // Update the cart state whenever it changes in localStorage
-    setCart(JSON.parse(localStorage.getItem("cart")) || []);
+    const initialCart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCart(initialCart);
   }, []);
 
   const removeFromCart = (index) => {

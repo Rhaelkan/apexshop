@@ -3,20 +3,17 @@
 import Link from "next/link";
 import { navLinks } from "@/constants";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function NavBar() {
   const pathName = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [initialCart, setInitialCart] = useState([]);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    const cartData =
-      typeof window !== "undefined"
-        ? JSON.parse(localStorage.getItem("cart")) || []
-        : [];
-    setInitialCart(cartData);
-  }, []); // Boş bağımlılık dizisi, sadece bir kere çalışmasını sağlar.
+    const initialCart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCart(initialCart);
+  }, [cart]);
 
   return (
     <nav className="bg-white p-6 sm:py-10 top-0 z-20 w-full sticky">
@@ -39,9 +36,7 @@ export default function NavBar() {
                 }`}
               >
                 {link.title}{" "}
-                {link.title === "Cart" &&
-                  initialCart.length > 1 &&
-                  `(${initialCart.length})`}
+                {link.title === "Cart" && cart.length > 0 && `(${cart.length})`}
               </Link>
             </li>
           ))}

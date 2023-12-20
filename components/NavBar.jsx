@@ -13,7 +13,7 @@ export default function NavBar() {
   useEffect(() => {
     const initialCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCart(initialCart);
-  }, [cart]);
+  }, []);
 
   return (
     <nav className="bg-white p-6 sm:py-10 top-0 z-20 w-full sticky">
